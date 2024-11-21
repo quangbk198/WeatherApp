@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.viewbinding.ViewBinding
+import com.example.weatherapp.R
 import com.example.weatherapp.core.base.viewmodel.BaseViewModel
 import com.example.weatherapp.utils.view.LoadingDialog
 import com.example.weatherapp.utils.view.NoticeDialog
@@ -75,6 +76,8 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel>(
     }
 
     override fun onError(errMess: String?) {
-        noticeDialog.newBuild().setContent(errMess)
+        noticeDialog.newBuild().setContent(
+            errMess ?: getString(R.string.common_error)
+        ).show()
     }
 }

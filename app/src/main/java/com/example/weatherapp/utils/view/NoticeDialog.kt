@@ -2,6 +2,7 @@ package com.example.weatherapp.utils.view
 
 import android.app.Dialog
 import android.content.Context
+import android.content.res.Resources
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -16,7 +17,9 @@ class NoticeDialog(
     context: Context
 ) : Dialog(context) {
 
-    private lateinit var binding: NoticeDialogLayoutBinding
+    private val binding = NoticeDialogLayoutBinding.inflate(
+        LayoutInflater.from(context)
+    )
 
     private var onClickBtnLeft: () -> Unit = {}
     private var onClickBtnRight: () -> Unit = {}
@@ -24,15 +27,12 @@ class NoticeDialog(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = NoticeDialogLayoutBinding.inflate(
-            LayoutInflater.from(context)
-        )
-
         requestWindowFeature(Window.FEATURE_NO_TITLE)
 
         setContentView(binding.root)
 
         window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        window?.attributes?.width = (Resources.getSystem().displayMetrics.widthPixels * 90) / 100
 
         binding.btnLeft.setOnClickListener {
             onClickBtnLeft.invoke()
