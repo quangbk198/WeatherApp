@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.example.weatherapp.core.base.viewmodel.BaseViewModel
 import com.example.weatherapp.utils.view.LoadingDialog
+import com.example.weatherapp.utils.view.NoticeDialog
 
 abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel>(
     val bindingFactory: (LayoutInflater) -> VB
@@ -17,6 +18,10 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel>(
 
     private val loadingDialog by lazy {
         LoadingDialog(this)
+    }
+
+    private val noticeDialog by lazy {
+        NoticeDialog(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,7 +56,7 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel>(
         }
     }
 
-    override fun onError(errMess: String) {
-
+    override fun onError(errMess: String?) {
+        noticeDialog.newBuild().setContent(errMess)
     }
 }

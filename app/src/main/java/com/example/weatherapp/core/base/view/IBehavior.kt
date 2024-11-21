@@ -10,6 +10,6 @@ interface IBehavior {
 
     fun onLoading(isLoading: Boolean)
 
-    fun onError(errMess: String)
+    fun onError(errMess: String?)
 
 }

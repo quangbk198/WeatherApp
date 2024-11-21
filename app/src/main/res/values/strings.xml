@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">WeatherApp</string>
+    <string name="common_error">Đã có lỗi xảy ra, vui lòng thử lại.</string>
+    <string name="notification">Thông báo</string>
+    <string name="cancel">Hủy</string>
+    <string name="agree">Đồng ý</string>
+    <string name="confirm">Xác nhận</string>
 </resources>
