@@ -1,9 +1,11 @@
 package com.example.weatherapp.features.login
 
+import android.content.Intent
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.weatherapp.core.base.view.BaseActivity
 import com.example.weatherapp.databinding.ActivityLoginBinding
+import com.example.weatherapp.features.signup.SignupActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(
     ActivityLoginBinding::inflate
@@ -19,7 +21,13 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(
         binding.btnLogin.setOnClickListener {
             viewModel.login("", "")
         }
+
+        binding.footertext.setOnClickListener {
+            startActivity(Intent(this, SignupActivity::class.java))
+        }
     }
+
+
 
     override fun onObserveData() {
         super.onObserveData()

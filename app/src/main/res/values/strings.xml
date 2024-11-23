@@ -6,4 +6,7 @@
     <string name="agree">Đồng ý</string>
     <string name="confirm">Xác nhận</string>
     <string name="login">Đăng nhập</string>
+    <string name="footer_text">
+        Don\'t have an account? <u>Create</u>
+    </string>
 </resources>
