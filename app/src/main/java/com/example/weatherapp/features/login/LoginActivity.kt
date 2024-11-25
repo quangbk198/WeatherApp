@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.weatherapp.core.base.view.BaseActivity
 import com.example.weatherapp.databinding.ActivityLoginBinding
+import com.example.weatherapp.features.home.HomeActivity
 import com.example.weatherapp.features.signup.SignupActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(
@@ -19,7 +20,20 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(
 
     override fun onInitListener() {
         binding.btnLogin.setOnClickListener {
-            viewModel.login("", "")
+            val email = binding.etEmail.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
+
+            if (email.isEmpty()) {
+                binding.email.error = "Email không được để trống"
+                return@setOnClickListener
+            }
+
+            if (password.isEmpty()) {
+                binding.pword.error = "Mật khẩu không được để trống"
+                return@setOnClickListener
+            }
+
+            viewModel.login(email, password)
         }
 
         binding.footertext.setOnClickListener {
@@ -35,6 +49,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(
         viewModel.loginState.observe(this) { success ->
             if (success) {
                 Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show()
+//                val intent = Intent(this, HomeActivity::class.java)
+//                startActivity(intent)
+                finish()
+
             } else {
                 Toast.makeText(this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show()
             }

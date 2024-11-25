@@ -1,11 +1,9 @@
 package com.example.weatherapp.features.signup
 
-import android.content.Intent
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.weatherapp.core.base.view.BaseActivity
 import com.example.weatherapp.databinding.ActivitySignupBinding
-import com.example.weatherapp.features.login.LoginActivity
 
 class SignupActivity : BaseActivity<ActivitySignupBinding, SignupViewModel>(
     ActivitySignupBinding::inflate
@@ -66,14 +64,9 @@ class SignupActivity : BaseActivity<ActivitySignupBinding, SignupViewModel>(
 
         viewModel.signupState.observe(this) { success ->
             if (success) {
-                Toast.makeText(this, "Đăng ký thành công", Toast.LENGTH_SHORT).show()
-                // Navigate back to LoginActivity
-                val intent = Intent(this, LoginActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
-                startActivity(intent)
-                finish() // Close SignupActivity
-            } else {
-                Toast.makeText(this, "Đăng ký thất bại", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Register Successful", Toast.LENGTH_SHORT).show()
+                finish()
+
             }
         }
     }
