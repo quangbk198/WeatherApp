@@ -12,12 +12,12 @@ class SignupViewModel : BaseViewModel() {
     private val _signupState: MutableLiveData<Boolean> by lazy { MutableLiveData() }
     val signupState: LiveData<Boolean> get() = _signupState
 
-    fun signup(username: String, password: String, email: String, phone: Long) {
+    fun signup(repass: String, password: String, email: String, phone: Long) {
         coroutineScope.launch {
             setLoading(true)
 
             RepositoryFactory.getSignupRepository()
-                .signup(username, password, email, phone)
+                .signup(repass, password, email, phone)
 
             setLoading(false)
             _signupState.value = true

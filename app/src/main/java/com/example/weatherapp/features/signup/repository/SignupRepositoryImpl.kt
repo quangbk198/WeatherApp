@@ -5,20 +5,19 @@ import kotlinx.coroutines.tasks.await
 
 class SignupRepositoryImpl : SignupRepository {
 
-    override suspend fun signup(username: String, password: String, email: String, phone: Long) {
+    override suspend fun signup(repass: String, password: String, email: String, phone: Long) {
         // Registor with Firebase Authentication
         val result = MyFirebase.getInstance()
             .getAuth()
             .createUserWithEmailAndPassword(email, password)
             .await()
 
-        // Lấy UID của người dùng mới
+        // Get new userID
         val uid = result.user?.uid ?: throw IllegalStateException("Create accout fail.")
 
-        // Lưu thêm thông tin người dùng vào Firestore
+        // Store user info to firebase store
         val userData = mapOf(
             "uid" to uid,
-            "username" to username,
             "email" to email,
             "phone" to phone
         )

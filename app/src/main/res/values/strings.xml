@@ -1,12 +1,33 @@
 <resources>
-    <string name="app_name">WeatherApp</string>
-    <string name="common_error">Đã có lỗi xảy ra, vui lòng thử lại.</string>
-    <string name="notification">Thông báo</string>
-    <string name="cancel">Hủy</string>
-    <string name="agree">Đồng ý</string>
-    <string name="confirm">Xác nhận</string>
-    <string name="login">Đăng nhập</string>
-    <string name="footer_text">
-        Don\'t have an account? <u>Create</u>
-    </string>
+    <!-- App Name -->
+    <string name="app_name_login">WeatherApp</string>
+    <string name="app_title_name">Sign in to your account</string>
+    <string name="app_name_regis">Create Account</string>
+    <string name="btn_regis">Create</string>
+
+
+
+    <!-- Signup Specific -->
+    <string name="signup_button">Sign Up</string>
+    <string name="email_hint">Enter your email</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="repassword_hint">Re-enter your password</string>
+    <string name="phone_hint">Mobile</string>
+    <string name="error_password_not_match">Passwords do not match</string>
+    <string name="error_phone_required">Phone number is required</string>
+    <string name="error_invalid_phone">Invalid phone number</string>
+    <string name="toast_register_successful">Register Successful</string>
+
+    <!-- Login Specific -->
+    <string name="Sign_in_text">Sign In</string>
+    <string name="error_email_required">Email is required</string>
+    <string name="error_invalid_email">Invalid email format</string>
+    <string name="toast_login_successful">Login Successful</string>
+    <string name="toast_login_unsuccessful">Login Fail ?</string>
+    <string name="error_password_required">Password is required</string>
+    <string name="new_user_prompt">Don't have an account? Sign-up here?</string>
+    <string name="email">Email</string>
+    <string name="pword">Password</string>
+
+
 </resources>
