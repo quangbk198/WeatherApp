@@ -1,9 +1,10 @@
 <resources>
     <!-- App Name -->
-    <string name="app_name_login">WeatherApp</string>
+    <string name="app_name_login">Weather App</string>
     <string name="app_title_name">Sign in to your account</string>
     <string name="app_name_regis">Create Account</string>
     <string name="btn_regis">Create</string>
+    <string name="app_name">Weather App</string>
 
 
 
@@ -25,9 +26,15 @@
     <string name="toast_login_successful">Login Successful</string>
     <string name="toast_login_unsuccessful">Login Fail ?</string>
     <string name="error_password_required">Password is required</string>
-    <string name="new_user_prompt">Don't have an account? Sign-up here?</string>
+    <string name="new_user_prompt">Dont have an account? Sign-up here?</string>
     <string name="email">Email</string>
     <string name="pword">Password</string>
 
+    <string name="notification">Notification</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
 
+
+
+    <string name="common_error">Some thing went wrong!!!</string>
 </resources>
