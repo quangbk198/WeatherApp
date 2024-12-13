@@ -12,7 +12,7 @@ class HomeActivity : BaseActivity<ActivityLocationBinding, HomeViewModel>(
 
     override fun onInitView() {
         viewModel.getCurrentWeatherData()
-        viewModel.getFiveDaysWeatherData()
+//        viewModel.getFiveDaysWeatherData()
 
     }
 
