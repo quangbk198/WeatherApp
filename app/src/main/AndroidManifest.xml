@@ -5,6 +5,10 @@
     <!-- Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,22 +20,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WeatherApp"
         tools:targetApi="31">
-        <!-- Declare HomeActivity with intent-filter -->
-        <activity
-            android:name=".features.home.HomeActivity"
-            android:label="Weather Home"
-            android:exported="true"> <!-- Mark as exported -->
 
-            <!-- If this is the launcher activity, add intent-filter -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
         <!-- Login Activity -->
         <activity
-            android:name=".features.login.LoginActivity"
+            android:name=".features.home.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

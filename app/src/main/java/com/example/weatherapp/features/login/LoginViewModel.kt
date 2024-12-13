@@ -24,5 +24,4 @@ class LoginViewModel : BaseViewModel() {
             setLoading(false)
         }
     }
-
 }

@@ -37,4 +37,8 @@
 
 
     <string name="common_error">Some thing went wrong!!!</string>
+    <string name="degree">27°C</string>
+    <string name="high_pressure">H:32°</string>
+    <string name="low_pressure">L:24°</string>
+    <string name="more_details">More details</string>
 </resources>
